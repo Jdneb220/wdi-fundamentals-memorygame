@@ -26,6 +26,14 @@ h4{
 p{
 	padding: 40px;
 }
+
+#game-log{
+	float: right;
+	margin: 20px;
+	text-align: right;
+	max-height: 200px;
+	overflow-y: auto;
+}
 .board{
 	height:50%;
 	width: 50%;

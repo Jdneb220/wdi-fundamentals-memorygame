@@ -10,7 +10,7 @@ function resetScoreboard(){
 	document.getElementById('wins').innerHTML = wins;
 	document.getElementById('attempts').innerHTML = attempts;
 	var percent = 0.00
-	attempts == 0 ? percent = 0 : percent = wins / attempts * 1.00;
+	attempts == 0 ? percent = 0 : percent = Number(Math.round(wins / attempts + 'e2')+'e-2'); 
 	document.getElementById('percent').innerHTML = percent;
 
 }
@@ -22,11 +22,11 @@ function resetBoard(){
 
 function isMatch(cardsInPlay){
 	if (cardsInPlay[0] == cardsInPlay[1]){
-		alert('We have a match!');
+		document.getElementById('game-log').innerHTML =   '<font color=green>We have a match!</font><br>' + document.getElementById('game-log').innerHTML;
 		wins++;
 	}
 	else
-		alert('Not a match...');
+		document.getElementById('game-log').innerHTML =  '<font color=red>Not a match...</font><br>' + document.getElementById('game-log').innerHTML ;
 
 	resetBoard();
 }
